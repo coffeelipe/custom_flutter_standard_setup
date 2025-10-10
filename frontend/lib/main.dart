@@ -1,5 +1,4 @@
 import 'package:clam_project/src/core/app_theme.dart';
-import 'package:clam_project/src/pages/mobile/mobile_home_page.dart';
 import 'package:clam_project/src/pages/mobile/onboarding_page.dart';
 import 'package:clam_project/src/pages/web/web_home_page.dart';
 import 'package:flutter/foundation.dart';

@@ -65,9 +65,6 @@ class OnboardingPage extends StatelessWidget {
                           child: const Text('Cadastrar'),
                         ),
                       ),
-                      CustomElevatedButton.gradient(
-                        elevation: ,
-                      ),
                     ],
                   ),
                 ),
