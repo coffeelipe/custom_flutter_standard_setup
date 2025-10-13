@@ -1,0 +1,31 @@
+{
+  "@@locale": "pt",
+  "appTitle": "CLAM",
+  "appSubtitle": "Conectando negócios e clientes",
+
+  "welcomeMessage": "Olá, {userName}!",
+  "@welcomeMessage": {
+    "description": "Mensagem de cumprimento mostrada para o usuário na tela inicial",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "João"
+      }
+    }
+  },
+
+  "onboardingWelcome": "Bem-vindo!",
+  "onboardingDescription": "Descubra serviços incríveis perto de você.",
+  "loginTitle": "Entrar",
+  "registerTitle": "Criar Conta",
+  "emailLabel": "Email",
+  "passwordLabel": "Senha",
+  "confirmPasswordLabel": "Confirmar Senha",
+  "forgotPassword": "Esqueci minha senha",
+  "loginButton": "Entrar",
+  "signupButton": "Cadastrar",
+  "logoutButton": "Sair",
+  "homeTitle": "Home",
+  "loadingMessage": "Carregando...",
+  "errorMessage": "Algo deu errado. Por favor tente novamente."
+}
