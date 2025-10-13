@@ -1,6 +1,7 @@
 {
   "@@locale": "pt",
-  "appTitle": "Clam Project",
+  "appTitle": "CLAM",
+  "appSubtitle": "Conectando negócios e clientes",
 
   "welcomeMessage": "Olá, {userName}!",
   "@welcomeMessage": {
@@ -13,6 +14,8 @@
     }
   },
 
+  "onboardingWelcome": "Bem-vindo!",
+  "onboardingDescription": "Descubra serviços incríveis perto de você.",
   "loginTitle": "Entrar",
   "registerTitle": "Criar Conta",
   "emailLabel": "Email",

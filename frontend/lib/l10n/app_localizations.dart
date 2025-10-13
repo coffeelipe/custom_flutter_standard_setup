@@ -98,14 +98,32 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'Clam Project'**
+  /// **'CLAM'**
   String get appTitle;
+
+  /// No description provided for @appSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting businesses and clients'**
+  String get appSubtitle;
 
   /// Greeting message shown to the user on the home screen.
   ///
   /// In en, this message translates to:
   /// **'Welcome, {userName}!'**
   String welcomeMessage(String userName);
+
+  /// No description provided for @onboardingWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome!'**
+  String get onboardingWelcome;
+
+  /// No description provided for @onboardingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover amazing services near you.'**
+  String get onboardingDescription;
 
   /// No description provided for @loginTitle.
   ///

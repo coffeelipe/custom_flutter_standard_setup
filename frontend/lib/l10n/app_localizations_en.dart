@@ -9,12 +9,21 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Clam Project';
+  String get appTitle => 'CLAM';
+
+  @override
+  String get appSubtitle => 'Connecting businesses and clients';
 
   @override
   String welcomeMessage(String userName) {
     return 'Welcome, $userName!';
   }
+
+  @override
+  String get onboardingWelcome => 'Welcome!';
+
+  @override
+  String get onboardingDescription => 'Discover amazing services near you.';
 
   @override
   String get loginTitle => 'Login';

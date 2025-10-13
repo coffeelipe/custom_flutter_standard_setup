@@ -9,12 +9,21 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get appTitle => 'Clam Project';
+  String get appTitle => 'CLAM';
+
+  @override
+  String get appSubtitle => 'Conectando negócios e clientes';
 
   @override
   String welcomeMessage(String userName) {
     return 'Olá, $userName!';
   }
+
+  @override
+  String get onboardingWelcome => 'Bem-vindo!';
+
+  @override
+  String get onboardingDescription => 'Descubra serviços incríveis perto de você.';
 
   @override
   String get loginTitle => 'Entrar';
