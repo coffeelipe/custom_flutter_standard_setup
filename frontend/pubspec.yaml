@@ -41,3 +41,10 @@ flutter:
     - family: Goldplay
       fonts:
         - asset: assets/fonts/goldplay-alt-black.otf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-BoldItalic.ttf

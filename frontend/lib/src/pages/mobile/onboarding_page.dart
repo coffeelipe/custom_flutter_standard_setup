@@ -2,6 +2,7 @@ import 'package:clam_project/src/core/app_palette.dart';
 import 'package:clam_project/src/core/extensions/applocalization_extension.dart';
 import 'package:clam_project/src/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:clam_project/src/core/utils/utils.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -53,7 +54,7 @@ class OnboardingPage extends StatelessWidget {
                       ConstrainedBox(
                         constraints: const BoxConstraints(minWidth: 400),
                         child: CustomElevatedButton.gradient(
-                          onPressed: () => print('pressed sign in'),
+                          onPressed: () => Utils.safePrint('pressed sign in'),
                           gradient: Palette.primaryGradient,
                           child: Text(context.l10n.loginButton),
                         ),
@@ -61,7 +62,7 @@ class OnboardingPage extends StatelessWidget {
                       ConstrainedBox(
                         constraints: const BoxConstraints(minWidth: 400),
                         child: CustomElevatedButton.gradient(
-                          onPressed: () => print('pressed sign up'),
+                          onPressed: () => Utils.safePrint('pressed sign up'),
                           gradient: Palette.primaryGradient,
                           child: Text(context.l10n.signupButton),
                         ),
