@@ -1,5 +1,8 @@
 import 'package:clam_project/src/core/app_palette.dart';
+import 'package:clam_project/src/core/app_typography.dart';
 import 'package:clam_project/src/core/extensions/applocalization_extension.dart';
+import 'package:clam_project/src/core/utils/responsive_utils.dart';
+import 'package:clam_project/src/widgets/clam_logo.dart';
 import 'package:clam_project/src/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:clam_project/src/core/utils/utils.dart';
@@ -10,68 +13,71 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                context.l10n.appTitle,
-                style: const TextStyle(
-                  fontSize: 40,
-                  fontFamily: 'Bacalisties',
-                  fontWeight: FontWeight.bold,
-                  color: Palette.primaryColor,
-                ),
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: Responsive.heightPercentage(context, 90),
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(
+                Responsive.spacing(context, size: SpacingSize.lg),
               ),
-              Text(
-                context.l10n.appSubtitle,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontFamily: 'Bacalisties',
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 20),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        context.l10n.onboardingWelcome,
-                        style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Palette.primaryColor,
-                        ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const ClamLogo(),
+                  Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(
+                        Responsive.spacing(context, size: SpacingSize.md),
                       ),
-                      Text(
-                        context.l10n.onboardingDescription,
-                        style: const TextStyle(color: Palette.softTextColor),
+                      child: Column(
+                        children: [
+                          Text(
+                            context.l10n.onboardingWelcome,
+                            style: AppTypography.heading2(
+                              context,
+                            ).copyWith(color: Palette.primaryColor),
+                          ),
+                          Text(
+                            context.l10n.onboardingDescription,
+                            textAlign: TextAlign.center,
+                            style: AppTypography.bodyMedium(
+                              context,
+                            ).copyWith(color: Palette.softTextColor),
+                          ),
+                          ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: Responsive.maxContentWidth(context),
+                            ),
+                            child: CustomElevatedButton.solid(
+                              onPressed: () =>
+                                  Utils.safePrint('pressed sign in'),
+                              child: Text(
+                                context.l10n.loginButton,
+                                style: AppTypography.bodyMedium(context),
+                              ),
+                            ),
+                          ),
+                          ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: Responsive.maxContentWidth(context),
+                            ),
+                            child: CustomElevatedButton.solid(
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/signup'),
+                              backgroundColor: Palette.accentColor,
+                              child: Text(context.l10n.signupButton, style: AppTypography.bodyMedium(context),),
+                            ),
+                          ),
+                        ],
                       ),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 400),
-                        child: CustomElevatedButton.gradient(
-                          onPressed: () => Utils.safePrint('pressed sign in'),
-                          gradient: Palette.primaryGradient,
-                          child: Text(context.l10n.loginButton),
-                        ),
-                      ),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 400),
-                        child: CustomElevatedButton.gradient(
-                          onPressed: () => Utils.safePrint('pressed sign up'),
-                          gradient: Palette.primaryGradient,
-                          child: Text(context.l10n.signupButton),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
