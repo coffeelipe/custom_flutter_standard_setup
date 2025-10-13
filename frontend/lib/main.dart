@@ -1,6 +1,7 @@
 import 'package:clam_project/l10n/app_localizations.dart';
 import 'package:clam_project/src/core/app_theme.dart';
 import 'package:clam_project/src/pages/mobile/onboarding_page.dart';
+import 'package:clam_project/src/pages/mobile/signup/signup_page.dart';
 import 'package:clam_project/src/pages/web/web_home_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class MobileApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routes: {'/onboarding': (context) => const OnboardingPage()},
+      routes: {
+        '/onboarding': (context) => const OnboardingPage(),
+        '/signup': (context) => const SignupPage(),
+      },
       home: const OnboardingPage(),
     );
   }
