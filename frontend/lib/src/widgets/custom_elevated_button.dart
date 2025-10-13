@@ -1,4 +1,6 @@
 import 'package:clam_project/src/core/app_palette.dart';
+import 'package:clam_project/src/core/app_theme.dart';
+import 'package:clam_project/src/core/app_typography.dart';
 import 'package:flutter/material.dart';
 
 /// A customizable elevated button with scale animation and solid color or gradient background.
@@ -166,11 +168,9 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
               child: Padding(
                 padding: widget.contentPadding,
                 child: DefaultTextStyle(
-                  style: TextStyle(
-                    color: widget.foregroundColor,
-                    fontSize: 16,
-                    fontFamily: 'Goldplay',
-                  ),
+                  style: AppTypography.bodyMedium(
+                    context,
+                  ).copyWith(fontFamily: AppTheme.bodyFont),
                   child: Center(child: widget.child),
                 ),
               ),
