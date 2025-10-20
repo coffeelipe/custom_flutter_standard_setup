@@ -1,4 +1,3 @@
-import 'package:clam_project/src/core/app_palette.dart';
 import 'package:clam_project/src/core/app_typography.dart';
 import 'package:clam_project/src/core/extensions/applocalization_extension.dart';
 import 'package:clam_project/src/core/utils/responsive_utils.dart';
@@ -19,13 +18,13 @@ class ClamLogo extends StatelessWidget {
             context.l10n.appTitle,
             textAlign: TextAlign.center,
             style: Responsive.isDesktop(context)
-                ? AppTypography.heading1(context).copyWith(
-                    color: Palette.primaryColor,
+                ? AppTypography.heading3(context).copyWith(
+                    color: context.theme.colorScheme.primary,
                     fontFamily: 'Bacalisties',
                     fontSize: Responsive.fontSize(context, 40),
                   )
                 : AppTypography.heading1(context).copyWith(
-                    color: Palette.primaryColor,
+                    color: context.theme.colorScheme.primary,
                     fontFamily: 'Bacalisties',
                   ),
           ),

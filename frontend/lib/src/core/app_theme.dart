@@ -26,7 +26,13 @@ class AppTheme {
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: Palette.primaryColor,
       secondary: Palette.secondaryColor,
+      tertiary: Palette.accentColor,
       surface: Palette.backgroundColor,
+      error: Palette.errorColor,
+      onPrimary: Palette.textColorLight,
+      onSecondary: Palette.textColorLight,
+      onSurface: Palette.textColor,
+      onError: Palette.textColorLight,
     ),
     inputDecorationTheme: InputDecorationTheme(
       disabledBorder: enabledOutlineInputBorder(),
@@ -34,7 +40,41 @@ class AppTheme {
     ),
   );
 
+  static OutlineInputBorder disabledOutlineInputBorderDark() => OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8),
+    borderSide: const BorderSide(
+      style: BorderStyle.solid,
+      color: Palette.inputBorderColorDark,
+      width: 2,
+    ),
+  );
+
+  static OutlineInputBorder enabledOutlineInputBorderDark() => OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8),
+    borderSide: const BorderSide(
+      style: BorderStyle.solid,
+      color: Palette.primaryColorDark,
+      width: 2,
+    ),
+  );
+
   static final darkTheme = ThemeData.dark().copyWith(
-    // Define dark theme properties here in the future
+    textTheme: ThemeData.dark().textTheme.apply(fontFamily: bodyFont),
+    scaffoldBackgroundColor: Palette.backgroundColorDark,
+    colorScheme: ColorScheme.fromSwatch(brightness: Brightness.dark).copyWith(
+      primary: Palette.primaryColorDark,
+      secondary: Palette.secondaryColorDark,
+      tertiary: Palette.accentColorDark,
+      surface: Palette.surfaceColorDark,
+      error: Palette.errorColor,
+      onPrimary: Palette.textColorDarkLight,
+      onSecondary: Palette.textColorDarkLight,
+      onSurface: Palette.textColorDark,
+      onError: Palette.textColorDarkLight,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      disabledBorder: enabledOutlineInputBorderDark(),
+      enabledBorder: enabledOutlineInputBorderDark(),
+    ),
   );
 }

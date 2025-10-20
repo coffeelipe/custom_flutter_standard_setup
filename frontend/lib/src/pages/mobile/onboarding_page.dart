@@ -1,4 +1,3 @@
-import 'package:clam_project/src/core/app_palette.dart';
 import 'package:clam_project/src/core/app_typography.dart';
 import 'package:clam_project/src/core/extensions/applocalization_extension.dart';
 import 'package:clam_project/src/core/utils/responsive_utils.dart';
@@ -38,14 +37,14 @@ class OnboardingPage extends StatelessWidget {
                             context.l10n.onboardingWelcome,
                             style: AppTypography.heading2(
                               context,
-                            ).copyWith(color: Palette.primaryColor),
+                            ).copyWith(color: context.theme.colorScheme.primary),
                           ),
                           Text(
                             context.l10n.onboardingDescription,
                             textAlign: TextAlign.center,
                             style: AppTypography.bodyMedium(
                               context,
-                            ).copyWith(color: Palette.softTextColor),
+                            ).copyWith(color: context.theme.textTheme.bodyMedium?.color?.withValues(alpha: 0.7)),
                           ),
                           ConstrainedBox(
                             constraints: BoxConstraints(
@@ -54,6 +53,7 @@ class OnboardingPage extends StatelessWidget {
                             child: CustomElevatedButton.solid(
                               onPressed: () =>
                                   Utils.safePrint('pressed sign in'),
+                              backgroundColor: context.theme.colorScheme.primary,
                               child: Text(
                                 context.l10n.loginButton,
                                 style: AppTypography.bodyMedium(context),
@@ -67,7 +67,7 @@ class OnboardingPage extends StatelessWidget {
                             child: CustomElevatedButton.solid(
                               onPressed: () =>
                                   Navigator.pushNamed(context, '/signup'),
-                              backgroundColor: Palette.accentColor,
+                              backgroundColor: context.theme.colorScheme.tertiary,
                               child: Text(context.l10n.signupButton, style: AppTypography.bodyMedium(context),),
                             ),
                           ),
